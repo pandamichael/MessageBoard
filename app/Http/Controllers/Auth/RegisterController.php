@@ -12,6 +12,7 @@ class RegisterController extends Controller
 {
     public function register(Request $request)
     {
+        // 使用 Validator 來驗證請求資料
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
